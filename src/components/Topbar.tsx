@@ -3,7 +3,6 @@ import React from "react";
 import logo from "../assets/sheepy.png";
 import ramda_logo from "../assets/ramda.png";
 import { colors } from "../utils/theme";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export default function Topbar() {
@@ -24,9 +23,6 @@ export default function Topbar() {
         </Text>
         <Image marginLeft="8px" h="12px" src={ramda_logo} />
       </Box>
-      <Link href="https://github.com/iskenxan/sheepy-fp-guide">
-        <FontAwesomeIcon size="lg" color={colors.fgColor} icon={faGithub} />
-      </Link>
     </Box>
   );
 }
