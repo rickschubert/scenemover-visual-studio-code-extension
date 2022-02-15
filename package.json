@@ -58,7 +58,7 @@
     "build": "./scripts/build-non-split.js && tsc -p tsconfig.extension.json",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "watch-build": "nodemon --watch src --ext js,tsx,ts --exec \"yarn run build\""
+    "watch-build": "nodemon --watch src --ext js,tsx,ts --exec \"npm run build\""
   },
   "devDependencies": {
     "@types/jest": "^23.3.13",

@@ -20,7 +20,7 @@ export default function Topbar() {
       </Box>
       <Box ml="12px" d="flex" marginRight="auto">
         <Text color={colors.fgColor} fontSize="12px">
-          Interactive FP guide for Ramda.js
+          Scene Layout
         </Text>
         <Image marginLeft="8px" h="12px" src={ramda_logo} />
       </Box>
