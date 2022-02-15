@@ -1,13 +1,12 @@
 {
-  "name": "sheepy",
-  "displayName": "Sheepy - interactive Ramda.JS guide",
-  "description": "Sheepy is the interactive Ramda.JS guide for VSCode. Find the right function for your task.",
+  "name": "scenemover-visual-studio-code-extension",
+  "displayName": "scenemover - Move fountain scenes around",
+  "description": "",
   "version": "0.1.0",
   "engines": {
     "vscode": "^1.23.0"
   },
   "icon": "public/icon.png",
-  "homepage": "https://github.com/iskenxan/sheepy-fp-guide",
   "categories": [
     "Extension Packs",
     "Visualization"
@@ -21,15 +20,15 @@
   ],
   "publisher": "iskenxan",
   "activationEvents": [
-    "onCommand:sheepy.start"
+    "onCommand:scenemover.start"
   ],
   "main": "./build/ext-src/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "sheepy.start",
-        "title": "Start Sheepy FP guide",
-        "category": "Sheepy"
+        "command": "scenemover.start",
+        "title": "Open interactive scene layout editor",
+        "category": "Scene Mover"
       }
     ]
   },
