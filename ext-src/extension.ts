@@ -3,12 +3,8 @@ import * as vscode from "vscode";
 
 export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
-    vscode.commands.registerCommand("scenemover.start", () => {
+    vscode.commands.registerCommand("scenemover.start", async () => {
       const panel = ReactPanel.createOrShow(context.extensionPath);
-      // Wait 1500 seconds before posting a mesage
-      setTimeout(() => {
-        panel.sendSceneList()
-      }, 1500)
     })
   );
 }
@@ -84,12 +80,6 @@ class ReactPanel {
       null,
       this._disposables
     );
-  }
-
-  public sendSceneList() {
-    // Send a message to the webview webview.
-    // You can send any JSON serializable data.
-    this._panel.webview.postMessage({ command: "sendSceneList", scenes: ["a", "b", "c"] });
   }
 
   public dispose() {
