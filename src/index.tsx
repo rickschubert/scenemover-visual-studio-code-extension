@@ -7,19 +7,15 @@ import AppContextProvider from './contexts/AppContextProvider';
 import App from "./App";
 import "./index.css";
 
+const preloadedState = getPreloadedState();
+const appComponent = (
+    <React.StrictMode>
+        <ReduxProvider store={configureAppStore(preloadedState)}>
+            <AppContextProvider>
+                <App />
+            </AppContextProvider>
+        </ReduxProvider>
+    </React.StrictMode>
 
-
-(async () => {
-    const preloadedState = getPreloadedState();
-    const appComponent = (
-        <React.StrictMode>
-            <ReduxProvider store={configureAppStore(preloadedState)}>
-                <AppContextProvider>
-                    <App />
-                </AppContextProvider>
-            </ReduxProvider>
-        </React.StrictMode>
-
-    )
-    ReactDOM.render(appComponent, document.getElementById("root") as HTMLElement);
-})();
+)
+ReactDOM.render(appComponent, document.getElementById("root") as HTMLElement);
