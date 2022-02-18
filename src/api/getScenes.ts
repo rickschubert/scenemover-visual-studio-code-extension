@@ -1,4 +1,4 @@
-interface Scene {
+export interface Scene {
     title: string
     content: string
 }

@@ -4,33 +4,37 @@ import {
     PayloadAction,
     // createAsyncThunk
 } from '@reduxjs/toolkit';
+import { Scene } from '../../api/getScenes';
 
 import { RootState, StoreDispatch, StoreGetState } from '../configureStore';
 
 export type UIState = {
-    fullscreenMap?: boolean;
+    scenes?: Scene[];
 };
 
 export const initialUIState: UIState = {
-    fullscreenMap: false,
+    scenes: [],
 };
 
 const slice = createSlice({
     name: 'UI',
     initialState: initialUIState,
     reducers: {
-        isFullscreenMapToggled: (state) => {
-            state.fullscreenMap = !state.fullscreenMap;
+        setScenes: (state) => {
+            state.scenes = [{
+                title: "lalala",
+                content: "something else"
+            }];
         },
     },
 });
 
 const { reducer } = slice;
 
-export const { isFullscreenMapToggled } = slice.actions;
+export const { setScenes } = slice.actions;
 
-export const fullscreenMapSelector = createSelector(
-    (state: RootState) => state.UI.fullscreenMap,
+export const scenesSelector = createSelector(
+    (state: RootState) => state.UI.scenes,
     (fullscreenMap) => fullscreenMap
 );
 
