@@ -9,7 +9,7 @@ import {
 } from '../store/reducers/UI';
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
-import { TutorialApp } from "../components/TutorialApp";
+
 
 export const Main = () => {
 
@@ -31,8 +31,7 @@ export const Main = () => {
     <>
         <Topbar />
         <DndProvider backend={HTML5Backend}>
-          <TutorialApp />
-          {/* {scenes && scenes.map((scene) => ( <Scene key={Math.random()} {...scene} />))} */}
+          {scenes && scenes.map((scene) => ( <Scene key={Math.random()} {...scene} />))}
         </DndProvider>
     </>
   );
