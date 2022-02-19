@@ -3,7 +3,7 @@ import Topbar from "../components/Topbar";
 import MainContextWrapper from "./MainContext";
 import Scene from "../components/Scene";
 
-export default function Main() {
+export const Main = () => {
   return (
     <MainContextWrapper>
         <Topbar />

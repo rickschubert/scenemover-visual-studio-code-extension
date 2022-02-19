@@ -4,7 +4,7 @@ import { Provider as ReduxProvider } from 'react-redux';
 import configureAppStore, { getPreloadedState } from './store/configureStore';
 import AppContextProvider from './contexts/AppContextProvider';
 
-import App from "./App";
+import { Main } from "./container/Main";
 import "./index.css";
 
 const preloadedState = getPreloadedState();
@@ -12,7 +12,7 @@ const appComponent = (
     <React.StrictMode>
         <ReduxProvider store={configureAppStore(preloadedState)}>
             <AppContextProvider>
-                <App />
+                <Main />
             </AppContextProvider>
         </ReduxProvider>
     </React.StrictMode>
