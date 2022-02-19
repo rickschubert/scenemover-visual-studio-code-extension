@@ -9,6 +9,7 @@ import {
 } from '../store/reducers/UI';
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
+import DropBox from "../components/dropBox";
 
 
 export const Main = () => {
@@ -32,6 +33,7 @@ export const Main = () => {
         <Topbar />
         <DndProvider backend={HTML5Backend}>
           {scenes && scenes.map((scene) => ( <Scene key={Math.random()} {...scene} />))}
+          <DropBox></DropBox>
         </DndProvider>
     </>
   );
