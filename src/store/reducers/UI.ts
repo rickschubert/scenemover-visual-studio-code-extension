@@ -20,11 +20,9 @@ const slice = createSlice({
     name: 'UI',
     initialState: initialUIState,
     reducers: {
-        setScenes: (state) => {
-            state.scenes = [{
-                title: "lalala",
-                content: "something else"
-            }];
+        setScenes: (state, action: PayloadAction<Scene[]>) => {
+            console.warn({actionPayload: action.payload})
+            state.scenes = action.payload
         },
     },
 });

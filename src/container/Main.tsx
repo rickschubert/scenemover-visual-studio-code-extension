@@ -13,7 +13,7 @@ export const Main = () => {
 
   const getScenesAsync = async () => {
     getScenes().then((loadedScenes) => {
-      dispatch(setScenes());
+      dispatch(setScenes(loadedScenes));
     })
   }
 

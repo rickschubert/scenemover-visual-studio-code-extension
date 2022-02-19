@@ -11,7 +11,6 @@ export default function Scene({heading = ""}: {heading?: string}) {
   console.log({scenes})
   return (
     <div className="scene">
-        <button name="change it" onClick={()=>dispatch(setScenes())}></button>
         {/* @ts-ignore */}
         <p className="scene-heading"> Scene heading {JSON.stringify(scenes[0])}</p>
     </div>
