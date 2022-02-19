@@ -16,6 +16,5 @@ const appComponent = (
             </AppContextProvider>
         </ReduxProvider>
     </React.StrictMode>
-
 )
 ReactDOM.render(appComponent, document.getElementById("root") as HTMLElement);
