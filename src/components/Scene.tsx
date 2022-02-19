@@ -12,7 +12,7 @@ export default function Scene({heading = ""}: {heading?: string}) {
   return (
     <div className="scene">
         {/* @ts-ignore */}
-        <p className="scene-heading"> Scene heading {JSON.stringify(scenes[0])}</p>
+        <p className="scene-heading"> Scene heading {JSON.stringify(scenes)}</p>
     </div>
   );
 }
