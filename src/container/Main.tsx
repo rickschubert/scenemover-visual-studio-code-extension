@@ -27,7 +27,7 @@ export const Main = () => {
   return (
     <>
         <Topbar />
-        {scenes && scenes.map((scene) => ( <Scene key={Math.random()} heading={scene.title} />))}
+        {scenes && scenes.map((scene) => ( <Scene key={Math.random()} {...scene} />))}
     </>
   );
 }
