@@ -5,6 +5,7 @@ import { DRAGGABLE_ITEMTYPES } from "../container/constants";
 export default function Scene({title, content}: {title: string, content: string}) {
   const [{ isDragging }, drag, dragPreview] = useDrag(() => ({
     type: DRAGGABLE_ITEMTYPES.SCENE,
+    item: {title},
     collect: (monitor) => ({
       isDragging: !!monitor.isDragging()
     })
