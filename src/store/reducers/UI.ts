@@ -21,7 +21,6 @@ const slice = createSlice({
     initialState: initialUIState,
     reducers: {
         setScenes: (state, action: PayloadAction<Scene[]>) => {
-            console.warn({actionPayload: action.payload})
             state.scenes = action.payload
         },
     },

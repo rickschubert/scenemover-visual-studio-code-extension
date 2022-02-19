@@ -1,10 +1,11 @@
 import React from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Topbar from "../components/Topbar";
 import Scene from "../components/Scene";
 import { getScenes } from "../api/getScenes";
 import {
   setScenes,
+  scenesSelector,
 } from '../store/reducers/UI';
 
 export const Main = () => {
@@ -21,10 +22,12 @@ export const Main = () => {
     getScenesAsync()
   }, [])
 
+  const scenes = useSelector(scenesSelector);
+
   return (
     <>
         <Topbar />
-        <Scene heading="this-is-the-scene-heading" />
+        {scenes && scenes.map((scene) => ( <Scene key={Math.random()} heading={scene.title} />))}
     </>
   );
 }
