@@ -32,7 +32,7 @@ export const Main = () => {
     <>
         <Topbar />
         <DndProvider backend={HTML5Backend}>
-            {scenes && scenes.map((scene, index) => (<DropBox key={index} {...scene}><Scene key={index} {...scene} /></DropBox>))}
+            {scenes && scenes.map((scene, index) => (<DropBox key={index} {...scene} sceneIndex={index}><Scene key={index} {...scene} /></DropBox>))}
         </DndProvider>
     </>
   );
