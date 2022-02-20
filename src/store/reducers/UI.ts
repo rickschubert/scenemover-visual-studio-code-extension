@@ -18,8 +18,8 @@ export const initialUIState: UIState = {
 };
 
 interface SceneTransition {
-    draggedFile: string
-    droppedFile: string
+    newIndex: number
+    oldIndex: number
 }
 
 const slice = createSlice({
@@ -30,10 +30,8 @@ const slice = createSlice({
             state.scenes = action.payload
         },
         moveScene: (state, action: PayloadAction<SceneTransition>) => {
-            const { draggedFile, droppedFile } = action.payload;
-            const dragged = state.scenes.findIndex(scene => scene.file === draggedFile);
-            const dropped = state.scenes.findIndex(scene => scene.file === droppedFile);
-            state.scenes = arrayMoveImmutable(state.scenes, dragged, dropped);
+            const { newIndex, oldIndex } = action.payload;
+            state.scenes = arrayMoveImmutable(state.scenes, oldIndex, newIndex);
         }
     },
 });
