@@ -10,7 +10,6 @@ const getPreloadedUIState = (): UIState => {
 
 export const getPreloadedState = (): PartialRootState => {
   return {
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     UI: getPreloadedUIState(),
   };
 };
