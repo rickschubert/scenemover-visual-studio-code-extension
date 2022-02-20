@@ -30,8 +30,9 @@ export const DropBox = ({ sceneIndex, children }: {sceneIndex: number, children:
 
   return (
     <div ref={drop}>
-      {isOver && <p>isOver()===true</p>}
+      {isOver && <div className="separation-line" />}
       {children}
+      {isOver && <div className="separation-line" />}
     </div>
   );
 };
