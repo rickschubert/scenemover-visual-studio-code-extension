@@ -3,14 +3,15 @@ import { useDrop } from "react-dnd";
 import { useDispatch } from "react-redux";
 import { DRAGGABLE_ITEMTYPES } from "../container/constants";
 import { moveScene } from "../store/reducers/UI";
+import { IDraggedScene } from "./Scene";
 
-export const DropBox = ({ sceneIndex, children }: any) => {
+export const DropBox = ({ sceneIndex, children }: {sceneIndex: number, children: React.ReactNode}) => {
   const dispatch = useDispatch();
 
   const [{ isOver }, drop] = useDrop(
     () => ({
       accept: DRAGGABLE_ITEMTYPES.SCENE,
-      drop: (item: any, monitor) => {
+      drop: (item: IDraggedScene, monitor) => {
         console.info("I was dropped!", {
           item,
           monitor,
