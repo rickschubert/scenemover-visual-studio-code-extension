@@ -2,10 +2,10 @@ import React from "react";
 import { useDrag } from 'react-dnd'
 import { DRAGGABLE_ITEMTYPES } from "../container/constants";
 
-export default function Scene({title, content}: {title: string, content: string}) {
+export default function Scene({title, content, file}: {title: string, content: string, file: string}) {
   const [{ isDragging }, drag, dragPreview] = useDrag(() => ({
     type: DRAGGABLE_ITEMTYPES.SCENE,
-    item: {title},
+    item: {file},
     collect: (monitor) => ({
       isDragging: !!monitor.isDragging()
     })

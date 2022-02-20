@@ -1,6 +1,7 @@
 export interface Scene {
     title: string
     content: string
+    file: string
 }
 
 export const getScenes = async (): Promise<Scene[]> => {
