@@ -1,4 +1,3 @@
-
 export const colors = {
   bgColor: "var(--vscode-textCodeBlock-background)",
   fgColor: "var(--vscode-foreground)",
@@ -14,7 +13,6 @@ export const colors = {
     600: "#4c2b89",
     700: "#361e63",
     800: "#21113d",
-    900: "#0d041a"
-  }
+    900: "#0d041a",
+  },
 };
-

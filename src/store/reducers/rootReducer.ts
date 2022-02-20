@@ -1,6 +1,6 @@
-import { combineReducers } from 'redux';
-import UI from './UI';
+import { combineReducers } from "redux";
+import {reducer as UI} from "./UI";
 
-export default combineReducers({
-    UI,
+export const rootReducer = combineReducers({
+  UI,
 });

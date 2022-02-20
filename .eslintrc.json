@@ -1,4 +1,5 @@
 {
+    "extends": "rickschubert",
     "root": true,
     "parser": "@typescript-eslint/parser",
     "parserOptions": {

@@ -6,6 +6,7 @@ import { getScenes } from "../api/getScenes";
 import {
   setScenes,
   scenesSelector,
+  UIState
 } from '../store/reducers/UI';
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
@@ -26,7 +27,7 @@ export const Main = () => {
     getScenesAsync()
   }, [])
 
-  const scenes = useSelector(scenesSelector);
+  const scenes: UIState["scenes"] = useSelector(scenesSelector);
 
   return (
     <>

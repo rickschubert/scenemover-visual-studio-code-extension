@@ -1,17 +1,16 @@
-import { PartialRootState } from './configureStore';
+import { PartialRootState } from "./configureStore";
 
-import { initialUIState, UIState } from '../store/reducers/UI';
+import { initialUIState, UIState } from "../store/reducers/UI";
 
 const getPreloadedUIState = (): UIState => {
-    return {
-        ...initialUIState,
-    };
+  return {
+    ...initialUIState,
+  };
 };
 
-const getPreloadedState = (): PartialRootState => {
-    return {
-        UI: getPreloadedUIState(),
-    };
+export const getPreloadedState = (): PartialRootState => {
+  return {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    UI: getPreloadedUIState(),
+  };
 };
-
-export default getPreloadedState;

@@ -39,7 +39,7 @@ class ReactPanel {
         column || vscode.ViewColumn.One
       );
     }
-    return ReactPanel.currentPanel
+    return ReactPanel.currentPanel;
   }
 
   private constructor(extensionPath: string, column: vscode.ViewColumn) {
@@ -56,8 +56,8 @@ class ReactPanel {
 
         // And restric the webview to only loading content from our extension's `media` directory.
         localResourceRoots: [
-          vscode.Uri.file(path.join(this._extensionPath, "build"))
-        ]
+          vscode.Uri.file(path.join(this._extensionPath, "build")),
+        ],
       }
     );
 
@@ -70,7 +70,7 @@ class ReactPanel {
 
     // Handle messages from the webview
     this._panel.webview.onDidReceiveMessage(
-      message => {
+      (message) => {
         switch (message.command) {
           case "alert":
             vscode.window.showErrorMessage(message.text);
@@ -127,7 +127,7 @@ class ReactPanel {
 				<link rel="stylesheet" type="text/css" href="${styleUri}">
 				<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src vscode-resource: https:; script-src 'nonce-${nonce}';style-src vscode-resource: 'unsafe-inline' http: https: data:;">
 				<base href="${vscode.Uri.file(path.join(this._extensionPath, "build")).with({
-          scheme: "vscode-resource"
+          scheme: "vscode-resource",
         })}/">
 			</head>
 
