@@ -12,10 +12,7 @@ export default function DropBox({title, content, file, sceneIndex, children}: an
         drop: (item: any, monitor) => {
           console.info("I was dropped!", {item, monitor, dropResult: monitor.getDropResult(), getItem: monitor.getItem()})
           console.info("This is where I was dropped AT", {title, content, file, sceneIndex})
-          dispatch(moveScene({newIndex: sceneIndex, file: item.file}))
-          return {
-            a: "b"
-          }
+          dispatch(moveScene({droppedFile: file, draggedFile: item.file}))
         },
         collect: monitor => ({
           isOver: !!monitor.isOver(),
