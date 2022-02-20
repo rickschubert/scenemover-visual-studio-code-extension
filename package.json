@@ -55,9 +55,10 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "watch-build": "nodemon --watch src --ext js,tsx,ts --exec \"npm run build\"",
-    "lint": "./node_modules/eslint/bin/eslint.js 'src/**/*.ts'",
-    "prettify": "prettier '**/*.ts' --write",
-    "lintFull": "npm run prettify && npm run lint -- --fix"
+    "lintTS": "./node_modules/eslint/bin/eslint.js 'src/**/*.ts'",
+    "lintTSX": "./node_modules/eslint/bin/eslint.js 'src/**/*.tsx'",
+    "prettify": "prettier '**/*.ts(x)?' --write",
+    "lintFull": "npm run prettify && npm run lintTS -- --fix && npm run lintTSX -- --fix"
   },
   "devDependencies": {
     "@types/jest": "^23.3.13",
