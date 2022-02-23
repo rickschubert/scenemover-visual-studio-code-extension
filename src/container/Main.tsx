@@ -28,7 +28,7 @@ export const Main = () => {
       <DndProvider backend={HTML5Backend}>
         {scenes &&
           scenes.map((scene, index) => (
-            <DropBox key={index} sceneIndex={index}>
+            <DropBox key={index} index={index}>
               <Scene key={index} {...scene} index={index} />
             </DropBox>
           ))}

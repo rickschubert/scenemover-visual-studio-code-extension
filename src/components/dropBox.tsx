@@ -7,10 +7,10 @@ import { DRAGGABLE_ITEMTYPES } from "../container/constants"
 import { IDraggedScene } from "./Scene"
 
 export const DropBox = ({
-  sceneIndex,
+  index,
   children,
 }: {
-  sceneIndex: number;
+  index: number;
   children: React.ReactNode;
 }) => {
   const dispatch = useDispatch()
@@ -22,7 +22,7 @@ export const DropBox = ({
       drop: async (item: IDraggedScene, monitor) => {
         const fileToMove = item.file
         const newScenes = await transitionSceneViaAPI({
-          newIndex: sceneIndex,
+          newIndex: index,
           fileToMove,
         })
         dispatch(setScenes(newScenes))
@@ -31,7 +31,7 @@ export const DropBox = ({
         isOver: Boolean(monitor.isOver()),
       }),
     }),
-    [sceneIndex]
+    [index]
   )
 
   return (
