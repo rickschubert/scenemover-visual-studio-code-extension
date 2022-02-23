@@ -4,24 +4,27 @@ import { DRAGGABLE_ITEMTYPES } from "../container/constants"
 
 export interface IDraggedScene {
   index: number;
+  file: string,
 }
 
 export const Scene = ({
   title,
   content,
+  file,
   index,
 }: {
   title: string;
   content: string;
+  file: string;
   index: number;
 }) => {
   const [{ isDragging }, drag] = useDrag(() => ({
     type: DRAGGABLE_ITEMTYPES.SCENE,
-    item: { index } as IDraggedScene,
+    item: { index, file } as IDraggedScene,
     collect: (monitor) => ({
       isDragging: Boolean(monitor.isDragging()),
     }),
-  }))
+  }), [file])
 
   return (
     <div className="scene" ref={drag}>
