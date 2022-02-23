@@ -4,8 +4,10 @@ export interface Scene {
   file: string;
 }
 
+const baseUrl = "http://127.0.0.1:8080"
+
 export const getScenes = async (): Promise<Scene[]> => {
-  const response = await fetch("http://localhost:8080/scenes");
+  const response = await fetch(`${baseUrl}/scenes`);
   const responseBody = await response.text();
   return JSON.parse(responseBody) as unknown as Scene[];
 };
