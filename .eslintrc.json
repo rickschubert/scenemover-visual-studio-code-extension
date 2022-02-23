@@ -15,6 +15,6 @@
         "curly": "warn",
         "eqeqeq": "warn",
         "no-throw-literal": "warn",
-        "semi": "off"
+        "@typescript-eslint/semi": "off"
     }
 }

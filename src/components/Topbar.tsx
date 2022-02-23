@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 export const Topbar = () => {
   return (
@@ -6,5 +6,5 @@ export const Topbar = () => {
       <h1>Scene Layout Editor</h1>
       <p>Drag and drop scenes in order to rearrange them.</p>
     </div>
-  );
-};
+  )
+}

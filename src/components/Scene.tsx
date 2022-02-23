@@ -1,9 +1,9 @@
-import React from "react";
-import { useDrag } from "react-dnd";
-import { DRAGGABLE_ITEMTYPES } from "../container/constants";
+import React from "react"
+import { useDrag } from "react-dnd"
+import { DRAGGABLE_ITEMTYPES } from "../container/constants"
 
 export interface IDraggedScene {
-  index: number
+  index: number;
 }
 
 export const Scene = ({
@@ -21,7 +21,7 @@ export const Scene = ({
     collect: (monitor) => ({
       isDragging: Boolean(monitor.isDragging()),
     }),
-  }));
+  }))
 
   return (
     <div className="scene" ref={drag}>
@@ -29,5 +29,5 @@ export const Scene = ({
       <p className="scene-content">{content}</p>
       {isDragging && <p>I am being dragged! </p>}
     </div>
-  );
-};
+  )
+}

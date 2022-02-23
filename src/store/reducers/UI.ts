@@ -3,10 +3,10 @@ import {
   createSelector,
   PayloadAction,
   // createAsyncThunk
-} from "@reduxjs/toolkit";
-import { Scene, SceneAfterTransition } from "../../api/getScenes";
+} from "@reduxjs/toolkit"
+import { Scene, SceneAfterTransition } from "../../api/getScenes"
 
-import { RootState } from "../configureStore";
+import { RootState } from "../configureStore"
 
 export type UIState = {
   scenes: Scene[] | SceneAfterTransition[];
@@ -14,12 +14,15 @@ export type UIState = {
 
 export const initialUIState: UIState = {
   scenes: [],
-};
+}
 
 /* Reducers */
-const setScenesReducer = (state: UIState, action: PayloadAction<Scene[] | SceneAfterTransition[]>) => {
-  state.scenes = action.payload;
-};
+const setScenesReducer = (
+  state: UIState,
+  action: PayloadAction<Scene[] | SceneAfterTransition[]>
+) => {
+  state.scenes = action.payload
+}
 
 /* Root reducer */
 const slice = createSlice({
@@ -28,13 +31,13 @@ const slice = createSlice({
   reducers: {
     setScenes: setScenesReducer,
   },
-});
+})
 
-export const { reducer } = slice;
+export const { reducer } = slice
 
-export const { setScenes } = slice.actions;
+export const { setScenes } = slice.actions
 
 export const scenesSelector = createSelector(
   (state: RootState) => state.UI.scenes,
   (fullscreenMap) => fullscreenMap
-);
+)
