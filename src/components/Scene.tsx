@@ -11,16 +11,14 @@ export const Scene = ({
   title,
   content,
   file,
-  index,
 }: {
   title: string;
   content: string;
   file: string;
-  index: number;
 }) => {
   const [{ isDragging }, drag] = useDrag(() => ({
     type: DRAGGABLE_ITEMTYPES.SCENE,
-    item: { index, file } as IDraggedScene,
+    item: { file } as IDraggedScene,
     collect: (monitor) => ({
       isDragging: Boolean(monitor.isDragging()),
     }),

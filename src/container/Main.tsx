@@ -29,7 +29,7 @@ export const Main = () => {
         {scenes &&
           scenes.map((scene, index) => (
             <DropBox key={index} index={index}>
-              <Scene key={index} {...scene} index={index} />
+              <Scene key={index} {...scene} />
             </DropBox>
           ))}
       </DndProvider>
