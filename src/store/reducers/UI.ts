@@ -5,7 +5,6 @@ import {
   // createAsyncThunk
 } from "@reduxjs/toolkit";
 import { Scene } from "../../api/getScenes";
-import { arrayMoveImmutable } from "array-move";
 
 import { RootState } from "../configureStore";
 
@@ -17,28 +16,24 @@ export const initialUIState: UIState = {
   scenes: [],
 };
 
-interface SceneTransition {
-  newIndex: number;
-  oldIndex: number;
-}
+/* Reducers */
+const setScenesReducer = (state: UIState, action: PayloadAction<Scene[]>) => {
+  console.warn({stateScenes: action.payload});
+  state.scenes = action.payload;
+};
 
+/* Root reducer */
 const slice = createSlice({
   name: "UI",
   initialState: initialUIState,
   reducers: {
-    setScenes: (state, action: PayloadAction<Scene[]>) => {
-      state.scenes = action.payload;
-    },
-    moveScene: (state, action: PayloadAction<SceneTransition>) => {
-      const { newIndex, oldIndex } = action.payload;
-      state.scenes = arrayMoveImmutable(state.scenes, oldIndex, newIndex);
-    },
+    setScenes: setScenesReducer,
   },
 });
 
 export const { reducer } = slice;
 
-export const { setScenes, moveScene } = slice.actions;
+export const { setScenes } = slice.actions;
 
 export const scenesSelector = createSelector(
   (state: RootState) => state.UI.scenes,
