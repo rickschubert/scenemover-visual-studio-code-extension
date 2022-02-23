@@ -14,18 +14,8 @@ export const DropBox = ({ sceneIndex, children }: {sceneIndex: number, children:
     () => ({
       accept: DRAGGABLE_ITEMTYPES.SCENE,
       drop: async (item: IDraggedScene, monitor) => {
-        console.info("I was dropped!", {
-          item,
-          monitor,
-          dropResult: monitor.getDropResult(),
-          getItem: monitor.getItem(),
-        });
-        console.info({react_store_in_drop: scenes})
-        console.info("This is where I was dropped AT", { sceneIndex });
-        console.info("The file that should be moved", scenes[item.index].file);
         const fileToMove = scenes[item.index].file;
         const newScenes = await transitionSceneViaAPI({newIndex: sceneIndex, fileToMove});
-        console.warn("newScenes inside drop", newScenes);
         dispatch(setScenes(newScenes));
       },
       collect: (monitor) => ({

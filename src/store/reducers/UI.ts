@@ -4,12 +4,12 @@ import {
   PayloadAction,
   // createAsyncThunk
 } from "@reduxjs/toolkit";
-import { Scene } from "../../api/getScenes";
+import { Scene, SceneAfterTransition } from "../../api/getScenes";
 
 import { RootState } from "../configureStore";
 
 export type UIState = {
-  scenes: Scene[];
+  scenes: Scene[] | SceneAfterTransition[];
 };
 
 export const initialUIState: UIState = {
@@ -17,8 +17,7 @@ export const initialUIState: UIState = {
 };
 
 /* Reducers */
-const setScenesReducer = (state: UIState, action: PayloadAction<Scene[]>) => {
-  console.warn({stateScenes: action.payload});
+const setScenesReducer = (state: UIState, action: PayloadAction<Scene[] | SceneAfterTransition[]>) => {
   state.scenes = action.payload;
 };
 
