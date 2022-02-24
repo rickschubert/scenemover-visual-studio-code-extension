@@ -1,4 +1,20 @@
-.separation-line {
+/* Styles applying to entirety of the app */
+#root {
+    font-family: sans-serif;
+}
+
+/* .separation-line {
     border-top: 1px solid #e5e5e5;
     margin: 0 0 20px;
 }
+
+.scene {
+    border: 0.15em solid black;
+    border-radius: 0.4em;
+
+}
+
+.scene-heading {
+    font-size: 1.5em;
+    font-weight: bold;
+} */

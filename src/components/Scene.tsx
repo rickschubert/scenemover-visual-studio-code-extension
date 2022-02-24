@@ -1,6 +1,7 @@
 import React from "react"
 import { useDrag } from "react-dnd"
 import { DRAGGABLE_ITEMTYPES } from "../container/constants"
+import "../styles/scene.scss"
 
 export interface IDraggedScene {
   index: number;

@@ -1,0 +1,2 @@
+- When a scene is in transitioning state, the UI should become unresponsive until the scene has finished transitioning
+- Error handling - there should be a proper error message instead of just an error block
