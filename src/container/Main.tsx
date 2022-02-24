@@ -7,6 +7,7 @@ import { setScenes, scenesSelector, UIState } from "../store/reducers/UI"
 import { DndProvider } from "react-dnd"
 import { HTML5Backend } from "react-dnd-html5-backend"
 import { DropBox } from "../components/dropBox"
+import "../styles/app.scss"
 
 export const Main = () => {
   const dispatch = useDispatch()
@@ -23,7 +24,7 @@ export const Main = () => {
   const scenes: UIState["scenes"] = useSelector(scenesSelector)
 
   return (
-    <>
+    <div id="app">
       <Topbar />
       <DndProvider backend={HTML5Backend}>
         {scenes &&
@@ -33,6 +34,6 @@ export const Main = () => {
             </DropBox>
           ))}
       </DndProvider>
-    </>
+    </div>
   )
 }

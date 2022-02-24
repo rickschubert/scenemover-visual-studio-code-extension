@@ -5,7 +5,6 @@ import { configureAppStore, getPreloadedState } from "./store/configureStore"
 import { AppContextProvider } from "./contexts/AppContextProvider"
 
 import { Main } from "./container/Main"
-import "./index.css"
 
 const preloadedState = getPreloadedState()
 const appComponent = (
