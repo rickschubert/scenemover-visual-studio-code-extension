@@ -5,25 +5,30 @@ import "../styles/scene.scss"
 
 export interface IDraggedScene {
   index: number;
-  file: string,
+  file: string;
 }
 
 export const Scene = ({
   title,
   content,
   file,
+  index,
 }: {
   title: string;
   content: string;
   file: string;
+  index: number;
 }) => {
-  const [{ isDragging }, drag] = useDrag(() => ({
-    type: DRAGGABLE_ITEMTYPES.SCENE,
-    item: { file } as IDraggedScene,
-    collect: (monitor) => ({
-      isDragging: Boolean(monitor.isDragging()),
+  const [{ isDragging }, drag] = useDrag(
+    () => ({
+      type: DRAGGABLE_ITEMTYPES.SCENE,
+      item: { file, index } as IDraggedScene,
+      collect: (monitor) => ({
+        isDragging: Boolean(monitor.isDragging()),
+      }),
     }),
-  }), [file])
+    [file, index]
+  )
 
   return (
     <div className="scene" ref={drag}>

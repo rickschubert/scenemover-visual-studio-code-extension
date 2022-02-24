@@ -6,7 +6,7 @@ import { getScenes } from "../api/getScenes"
 import { setScenes, scenesSelector, UIState } from "../store/reducers/UI"
 import { DndProvider } from "react-dnd"
 import { HTML5Backend } from "react-dnd-html5-backend"
-import { DropBox } from "../components/dropBox"
+import { DropBox } from "../components/DropBox"
 import "../styles/app.scss"
 
 export const Main = () => {
@@ -30,7 +30,7 @@ export const Main = () => {
         {scenes &&
           scenes.map((scene, index) => (
             <DropBox key={index} index={index}>
-              <Scene key={index} {...scene} />
+              <Scene key={index} {...scene} index={index} />
             </DropBox>
           ))}
       </DndProvider>
