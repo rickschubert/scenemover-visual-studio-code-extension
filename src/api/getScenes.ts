@@ -1,5 +1,6 @@
 export interface Scene {
   title: string;
+  body: string;
   content: string;
   file: string;
 }

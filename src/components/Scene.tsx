@@ -10,12 +10,12 @@ export interface IDraggedScene {
 
 export const Scene = ({
   title,
-  content,
+  body,
   file,
   index,
 }: {
   title: string;
-  content: string;
+  body: string;
   file: string;
   index: number;
 }) => {
@@ -33,7 +33,7 @@ export const Scene = ({
   return (
     <div className="scene" ref={drag}>
       <p className="scene-heading">{title}</p>
-      <p className="scene-content">{content}</p>
+      <p className="scene-content">{body}</p>
       {isDragging && <p>I am being dragged! </p>}
     </div>
   )

@@ -1,8 +1,30 @@
 @import 'colors.scss';
 
 .scene {
+    // Frame
     border: 0.15em solid $box-color;
     border-radius: 0.4em;
     margin: 1em 0em;
     padding: 0em 1em;
+
+    // Typewriter text
+    font-family: monospace;
+    font-size: 1.15em;
+}
+
+.scene-heading {
+    font-weight: bold;
+}
+
+.scene-content {
+    // Render line breaks
+    white-space: pre-line;
+
+    //Limit text to maximum 10 lines, otherwise reduce
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 10; /* number of lines to show */
+            line-clamp: 10;
+    -webkit-box-orient: vertical;
 }
