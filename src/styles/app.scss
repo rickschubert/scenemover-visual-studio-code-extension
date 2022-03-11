@@ -1,3 +1,5 @@
+@import 'colors.scss';
+
 #app {
     font-family: sans-serif;
 
@@ -10,4 +12,10 @@
     // Widen bottom so that the indicator to move scenes
     // is also visible when moving something to the bottom spot
     margin-bottom: 60px;
+}
+
+// Entire app rules, used for background
+html {
+    background-color: $primary-dark;
+    color: $primary-light;
 }

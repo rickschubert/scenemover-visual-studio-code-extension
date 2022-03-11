@@ -2,14 +2,18 @@
 
 .scene {
     // Frame
-    border: 0.15em solid $box-color;
+    border: 0.15em solid $accents-color;
     border-radius: 0.4em;
     margin: 1em 0em;
     padding: 0em 1em;
+    box-shadow: 0.2em 0.2em $accents-color;
 
     // Typewriter text
     font-family: monospace;
     font-size: 1.15em;
+
+    background-color: $typewriter-white;
+    color: $typewriter-black;
 }
 
 .scene-heading {
