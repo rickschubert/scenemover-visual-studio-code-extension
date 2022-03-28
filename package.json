@@ -11,14 +11,8 @@
     "Extension Packs",
     "Visualization"
   ],
-  "keywords": [
-    "ramda",
-    "functional programming",
-    "fp",
-    "interactive",
-    "guide"
-  ],
-  "publisher": "iskenxan",
+  "keywords": ["fountain"],
+  "publisher": "rickschubert",
   "activationEvents": [
     "onCommand:scenemover.start"
   ],
