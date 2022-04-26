@@ -2,9 +2,9 @@
 
 ![](https://rickschubert.net/blog/images/scenemover_moving_scene_with_files_in_view.gif "demo")
 
-This repository holds the backend implementation for a locally running web application I wrote to help me write a screenplay. [I published a blog article about the application](https://rickschubert.net/blog/posts/how-i-wrote-an-application-to-help-me-write-a-screenplay/), if you are keen to find out more.
+This repository holds the frontend implementation for a locally running web application I wrote to help me write a screenplay. [I published a blog article about the application](https://rickschubert.net/blog/posts/how-i-wrote-an-application-to-help-me-write-a-screenplay/), if you are keen to find out more.
 
-The web application is written with React using Redux for state management and React DnD for the drag-and-drop implementation. Starting point for the app's structure was [sheepy-fp-guide](https://github.com/iskenxan/sheepy-fp-guide).
+The web application is written with React using Redux for state management and React DnD for the drag-and-drop implementation. Starting point for the app's structure was [sheepy-fp-guide](https://github.com/iskenxan/sheepy-fp-guide). The web app calls a locally running web server built with Golang wich can be found [here](https://github.com/rickschubert/scenemover-go-tools).
 
 # Development
 - Run the web app with `npm start` to see it in the browser and to be able to debug
