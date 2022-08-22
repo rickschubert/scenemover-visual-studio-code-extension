@@ -25,7 +25,7 @@ export const getScenes = async (): Promise<Scene[]> => {
 export const transitionScene = async ({
   newIndex,
   fileToMove,
-}: TransitionScenePayload): Promise<SceneAfterTransition[]> => {
+}: TransitionScenePayload) => {
   const body = JSON.stringify({
     newIndex,
     file: fileToMove,
